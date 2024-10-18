@@ -1,0 +1,15 @@
+swagger_ui_info.admin_settings:
+  path: '/admin/config/services/swagger_ui_info'
+  defaults:
+    _form: '\Drupal\swagger_ui_info\Form\SwaggerUiSettingsForm'
+    _title: 'Swagger settings'
+  requirements:
+    _permission: 'administer swagger ui settings'
+
+swagger_ui_info.swagger_info:
+  path: '/swagger_info'
+  defaults:
+    _controller: '\Drupal\swagger_ui_info\Controller\SwaggerUiInfoController::infoPage'
+    _title: 'API info'
+  requirements:
+    _permission: 'access swagger ui information'

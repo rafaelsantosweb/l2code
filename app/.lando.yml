@@ -1,0 +1,37 @@
+name: l2code
+recipe: drupal10
+config:
+  webroot: web
+  drush: "*"
+  composer_version: '2'
+  php: '8.3'
+  via: apache:2.4.62
+services:
+  appserver:
+    build:
+      - composer install
+  database:
+    creds:
+      database: drupal10
+      username: drupal10
+      password: drupal10
+tooling:
+  drush:
+    service: appserver
+    env:
+      DRUSH_OPTIONS_URI: "https://l2code.lndo.site"
+  phpcs:
+    service: appserver
+    cmd: '/app/vendor/bin/phpcs --standard=Drupal,DrupalPractice'
+  composer:
+    service: appserver
+    description: Run composer commands
+    cmd:
+      - php -dmemory_limit=-1 /usr/local/bin/composer
+
+  database:
+    type: mysql:8
+    portforward: 3306 
+    build:
+      - composer update
+      - composer install

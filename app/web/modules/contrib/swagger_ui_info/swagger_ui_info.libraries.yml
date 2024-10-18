@@ -1,0 +1,10 @@
+swagger_ui_integration:
+  version: VERSION
+  js:
+    accets/js/swagger-ui-formatter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - swagger_ui_formatter/swagger_ui_integration

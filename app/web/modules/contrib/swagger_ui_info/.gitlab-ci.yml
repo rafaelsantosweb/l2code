@@ -1,0 +1,13 @@
+stages:
+  - build
+
+## build stage.
+build:
+  stage: build
+  only:
+    - master
+  tags:
+    - dev
+  script:
+    - PROJ="swagger_ui_info"
+    - ~/git-push.sh $PROJ

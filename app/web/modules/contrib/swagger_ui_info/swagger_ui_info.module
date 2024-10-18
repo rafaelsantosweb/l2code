@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Main module file for Swagger UI info.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function swagger_ui_info_theme(): array {
+  return [
+    'swagger_ui_info' => [
+      'variables' => [
+        'name' => NULL,
+      ],
+    ],
+  ];
+}

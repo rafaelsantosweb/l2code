@@ -1,0 +1,83 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "swagger",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://swagger-test.n10.s3dev.ru"
+        }
+    ],
+    "paths": {
+        "/cart/add": {
+            "post": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "add to cart",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": [
+                                    {
+                                        "purchased_entity_type": "commerce_product_variation",
+                                        "purchased_entity_id": "1",
+                                        "quantity": "1",
+                                        "combine": true
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "_format",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/cart": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "get cart",
+                "parameters": [
+                    {
+                        "name": "_format",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

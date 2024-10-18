@@ -1,0 +1,8 @@
+access swagger ui information:
+  description: 'View swagger output.'
+  title: 'Access swagger information'
+  restrict access: TRUE
+administer swagger ui settings:
+  description: 'Administer swagger ui settings.'
+  title: 'Access swagger ui admin settings'
+  restrict access: TRUE

@@ -1,0 +1,5 @@
+swagger_ui_info.admin_settings:
+  title: 'Swagger info admin settings'
+  description: 'Swagger info admin settings.'
+  route_name: swagger_ui_info.admin_settings
+  parent: 'system.admin_config_services'
